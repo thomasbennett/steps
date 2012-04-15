@@ -1,0 +1,244 @@
+<section>
+  <?php if(is_page('Get-Started')): ?>
+    <h2 class="landing-h2">If You Want to Follow Your Passion</h2>
+  <?php else: ?>
+    <h2 class="landing-h2">It's Never Too Late to Turn Your Creative Passion into a Career.</h2>
+  <?php endif; ?>
+  <div id="ajax-container" class="column right">
+    <form id="passion" class="landing-form">
+      <input type="hidden" name="it" value="iostudios" />
+      <input type="hidden" name="pa" value="password#" />
+      <input type="hidden" name="ins" value="nossi" />
+      <input type="hidden" name="pa" value="2%2e0" />
+
+      <strong class="passion-strong">Send for your free Nossi College of Art information packet.</strong>
+      <label for="interest">Program of Interest</label>
+      <select name="poi">
+        <option value="Graphic Design">Graphic Design</option>
+        <option value="Photography">Photography</option>
+        <option value="Videography">Videography</option>
+        <option value="Illustration">Illustration</option>
+      </select>
+
+      <div class="form-divide"></div>
+
+      <label for="firstname">Name</label>
+      <input type="text" class="tf-margin" name="firstname" alt="First" id="firstname" />
+      <input type="text" name="lastname" alt="Last" />
+
+      <label for="add1">Address</label>
+      <input type="text" class="tf-margin" name="add1" alt="Street line 1" id="add1" />
+      <input type="text" name="city" alt="City" />
+      <input type="text" class="tf-margin skip" name="add2" alt="Street line 2" />
+      <input type="text" name="stpro" alt="State" id="state" class="w100 tf-margin" />
+      <input type="text" name="pc" alt="Zip" id="zip" class="w100" />
+
+      <label for="email" class="half" id="email-label">Email</label>
+      <label for="Phone" class="half" id="phone-label">Phone</label>
+
+      <input type="text" class="tf-margin" name="email" alt="student@nossi.edu" id="email-tf" />
+      <input type="text" name="homephone" alt="XXX-XXX-XXXX" id="phone-tf" />
+
+      <div class="form-divide"></div>
+
+      <label for="graduate">When did you graduate high school?</label>
+      <select name="graduate">
+        <option value="2011">2011</option>
+        <option value="2010">2010</option>
+        <option value="2009">2009</option>
+        <option value="2008">2008</option>
+        <option value="2007">2007</option>
+        <option value="2006">2006</option>
+        <option value="2005">2005</option>
+        <option value="2004">2004</option>
+        <option value="2003">2003</option>
+        <option value="2002">2002</option>
+        <option value="2001">2001</option>
+        <option value="2000">2000</option>
+        <option value="1999">1999</option>
+        <option value="1998">1998</option>
+        <option value="1997">1997</option>
+        <option value="1996">1996</option>
+        <option value="1995">1995</option>
+        <option value="1994">1994</option>
+        <option value="1993">1993</option>
+        <option value="1992">1992</option>
+        <option value="1991">1991</option>
+        <option value="1990">1990</option>
+        <option value="1989">1989</option>
+        <option value="1988">1988</option>
+        <option value="1987">1987</option>
+        <option value="1986">1986</option>
+        <option value="1985">1985</option>
+        <option value="1984">1984</option>
+        <option value="1983">1983</option>
+        <option value="1982">1982</option>
+        <option value="1981">1981</option>
+        <option value="1980">1980</option>
+        <option value="1979">1979</option>
+        <option value="1978">1978</option>
+        <option value="1977">1977</option>
+        <option value="1976">1976</option>
+        <option value="1975">1975</option>
+        <option value="1974">1974</option>
+        <option value="1973">1973</option>
+        <option value="1972">1972</option>
+        <option value="1971">1971</option>
+        <option value="1970">1970</option>
+        <option value="1969">1969</option>
+        <option value="1968">1968</option>
+        <option value="1967">1967</option>
+        <option value="1966">1966</option>
+        <option value="1965">1965</option>
+        <option value="1964">1964</option>
+        <option value="1963">1963</option>
+        <option value="1962">1962</option>
+        <option value="1961">1961</option>
+        <option value="1960">1960</option>
+        <option value="1959">1959</option>
+        <option value="1958">1958</option>
+        <option value="1957">1957</option>
+        <option value="1956">1956</option>
+        <option value="1955">1955</option>
+        <option value="1954">1954</option>
+        <option value="1953">1953</option>
+        <option value="1952">1952</option>
+        <option value="1951">1951</option>
+        <option value="1950">1950</option>
+        <option value="1949">1949</option>
+        <option value="1948">1948</option>
+        <option value="1947">1947</option>
+        <option value="1946">1946</option>
+        <option value="1945">1945</option>
+        <option value="1944">1944</option>
+        <option value="1943">1943</option>
+        <option value="1942">1942</option>
+        <option value="1941">1941</option>
+        <option value="1940">1940</option>
+      </select>
+
+      <div class="form-divide"></div>
+
+      <div class="radio-block">
+        <label>Are you a veteran?</label>
+        <input type="radio" value="Yes" name="veteran" id="veteran-yes" /><label class="radio-label" for="veteran-yes">Yes</label>
+        <input type="radio" value="No" name="veteran" checked="checked" id="veteran-no" /><label class="radio-label" for="veteran-no">No</label>
+
+        <div class="form-divide"></div>
+
+        <label for="apply-semester">Semester interested in applying.</label>
+        <input type="radio" value="Spring" id="spring" name="semester" /><label class="radio-label" for="spring">Spring</label>
+        <input type="radio" value="Summer" id="summer" name="semester" /><label class="radio-label" for="summer">Summer</label>
+        <input type="radio" value="Fall" id="fall" name="semester" /><label class="radio-label" for="fall">Fall</label>
+
+        <div class="form-divide"></div>
+
+        <label for="schedule-tour">Would you like us to contact you about scheduling a tour?</label>
+        <input type="radio" value="Yes" checked="checked" name="schedule" id="schedule-yes" /><label for="schedule-yes" class="radio-label">Yes</label>
+        <input type="radio" value="No" id="schedule-no" name="schedule" /><label for="schedule-no" class="radio-label">No</label>
+
+        <div class="form-divide"></div>
+
+        <label for="contact-prefs">Would you prefer contact by email or phone?</label>
+        <input type="radio" value="Email" checked="checked" name="contact" id="pref-email" /><label for="pref-email" class="radio-label">Email</label>
+        <input type="radio" value="Phone" id="pref-phone" name="contact" /><label for="pref-phone" class="radio-label">Phone</label>
+      </div>
+
+      <button type="submit" class="passion-submit">A creative education is just a click away.</button>
+    </form>
+  </div>
+
+  <div class="column column-margin left">
+    <?php the_content(); ?>
+
+    <h3>Explore Career Degrees In:</h3>
+    <ul class="inline">
+      <li><a href="/?p=2501">Graphic Design</a></li>
+      <li><a href="/?p=2500">Photography</a></li>
+      <li><a href="/?p=2499">Videography</a></li>
+      <li class="last"><a href="/?p=2498">Illustration</a></li>
+    </ul>
+  </div>
+
+  <img src="<?php bloginfo('template_directory') ?>/images/images/mirage.jpg" width="948" style="margin-top: 15px;" alt="Samples of our work." />
+</section>
+
+<script>
+jQuery(function($){
+  $('input[type="text"]').each(function(){
+    var alt = $(this).attr('alt');
+    var val = $(this).attr('value');
+
+    // set placeholder text
+    $(this).css({'color':'#838383'}).attr('value', alt);
+  });
+
+  // focus
+  $('input[type="text"]').focus(function(){
+    var alt = $(this).attr('alt');
+    var val = $(this).attr('value');
+    if(val == alt) {
+      $(this).attr('value', '').css({'color':'#000'});
+    }
+  });
+
+  // blur
+  $('input[type="text"]').blur(function(){
+    var alt = $(this).attr('alt');
+    var val = $(this).attr('value');
+    if(val == '') {
+      $(this).css({'color':'#838383'}).attr('value', alt);
+    }
+  });
+
+  $('button.passion-submit').click(function(e){
+    is_valid = 1;
+    $('form#passion').find('input').each(function(){
+      var alt = $(this).attr('alt');
+      var val = $(this).attr('value');
+
+      if(val == alt || val == ''){
+        $(this).css({'border':'1px solid red'});
+        is_valid = 0;
+
+        if($(this).hasClass('skip')){
+          $(this).css({'border':'none'});
+          is_valid = 1;
+        }}
+    });
+
+    if(is_valid){
+      var theme = 'http://nossi.localhost/wp-content/themes/dev_theme/';
+
+      $.ajax({
+        type: 'POST',
+        data: $('#passion').serialize(),
+        url: theme + 'success.php',
+        success: function(data){
+          $('#ajax-container').html(data);
+        }
+      });
+    }
+    e.preventDefault();
+  });
+});
+</script>
+
+<!-- Google Code for Sign Up Conversion Page -->
+<script type="text/javascript">
+  /* <![CDATA[ */
+    var google_conversion_id = 1018752399;
+    var google_conversion_language = "en";
+    var google_conversion_format = "1";
+    var google_conversion_color = "ffffff";
+    var google_conversion_label = "iyX7CLGXrgIQj9vj5QM";
+    var google_conversion_value = 0;
+  /* ]]> */
+</script>
+  <script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+  <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1018752399/?label=iyX7CLGXrgIQj9vj5QM&amp;guid=ON&amp;script=0"/>
+  </div>
+</noscript>
