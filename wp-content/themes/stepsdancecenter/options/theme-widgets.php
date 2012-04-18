@@ -41,7 +41,7 @@ class LatestTweets extends ThemeWidgetBase {
     <div class="twitter-box"></div>
     <?php 
 //      require_once __DIR__ . '/../lib/twitter/TwitterHelper.php';
-//      $twitter_helper = new TwitterHelper('nossi');
+//      $twitter_helper = new TwitterHelper('steps');
 //      $tweets = $twitter_helper->_get_tweets(5);
 //      die(var_dump($tweets));
 
@@ -147,7 +147,7 @@ class ThemeWidgetLatestBlogPost extends ThemeWidgetBase {
 			<?php 
 		endif;
 		query_posts('post_type=post&posts_per_page=1'); 
-		add_filter('excerpt_length', 'nossi_exceprt_length_average');
+		add_filter('excerpt_length', 'steps_exceprt_length_average');
 		while(have_posts()): 
 			the_post();
 			?>
@@ -165,7 +165,7 @@ class ThemeWidgetLatestBlogPost extends ThemeWidgetBase {
 			</div>
 			<?php
 		endwhile;
-		remove_filter('excerpt_length', 'nossi_exceprt_length_average');
+		remove_filter('excerpt_length', 'steps_exceprt_length_average');
 		wp_reset_query();
 		?>
 		<a href="<?php echo get_permalink(get_option('page_for_posts')); ?>" class="more alignright">VISIT THE BLOG<span class="arr">&nbsp;</span></a>

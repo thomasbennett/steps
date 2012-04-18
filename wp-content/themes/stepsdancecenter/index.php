@@ -6,7 +6,7 @@
 			<div class="cbox">
 				<div class="cbox-t"></div>
 				<div class="cbox-c">
-					<h1><?php nossi_blog_title(); ?><span>&nbsp;</span></h1>
+					<h1><?php steps_blog_title(); ?><span>&nbsp;</span></h1>
 					<?php get_template_part('loop'); ?>
 				</div>
 				<div class="cbox-b"></div>

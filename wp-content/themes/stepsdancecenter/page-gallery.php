@@ -18,7 +18,7 @@ the_post();
 							<ul>
 								<?php 
 								$cats = get_terms(array('gallery_category'));
-								usort($cats, 'nossi_sort_gallery_categories');
+								usort($cats, 'steps_sort_gallery_categories');
 								foreach ($cats as $key => $cat): ?>
 									<li class="nav-<?php echo $cat->slug; ?> <?php echo ($key == 0) ? 'current' : ''; ?>"><a href="#"><span><?php echo $cat->name; ?></span></a></li>
 								<?php endforeach ?>

@@ -14,9 +14,9 @@ add_action('admin_menu', 'attach_main_options_page');
 $inner_options = new OptionsPage(array(
 	wp_option::factory('separator', 'sep_social', 'Social & Contact'),
 	wp_option::factory('text', 'twitter_username')
-		->set_default_value('nossicollegeart'),
+		->set_default_value('stepsdancectr'),
 	wp_option::factory('text', 'facebook_link')
-		->set_default_value('http://www.facebook.com/NossiCollege'),
+		->set_default_value('http://www.facebook.com/StepsDanceCtr'),
 	wp_option::factory('textarea', 'phone_numbers')
 		->set_default_value("615-514-2787(ARTS)\n1-888-986-2787(ARTS)"),
 	wp_option::factory('text', 'general_address', 'Address')

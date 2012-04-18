@@ -36,7 +36,7 @@ get_header();
 							<?php the_content(); ?>
 							<?php if ($link): ?>
 								<a href="<?php echo $link; ?>" class="more small">LEARN MORE<span class="arr">&nbsp;</span></a>
-								<?php nossi_share_icons($link, $clean_title); ?>
+								<?php steps_share_icons($link, $clean_title); ?>
 							<?php endif ?>
 						</div>
 					</div>
@@ -103,7 +103,7 @@ get_header();
 					<ul>
 						<?php 
 						$programs = get_terms(array('program')); 
-						usort($programs, 'nossi_sort_programs');
+						usort($programs, 'steps_sort_programs');
 						foreach ($programs as $key => $p): ?>
 							<li class="nav-<?php echo $p->slug; echo $key == 0 ? ' current' : ''; ?>"><a href="#"><span><?php echo $p->name; ?></span></a></li>
 						<?php endforeach ?>
@@ -231,7 +231,7 @@ get_header();
 						?>
 						<a href="<?php echo $video_url; ?>" class="more small fancybox-video">PLAY<span class="arr">&nbsp;</span></a>
 						<?php
-						nossi_share_icons($video_url, $title);
+						steps_share_icons($video_url, $title);
 					}
 					?>
 				</div>
@@ -240,7 +240,7 @@ get_header();
 				<?php 
 				$news_cat = get_term_by('slug', 'news', 'category');
 				if ($news_cat): 
-					add_filter('excerpt_length', 'nossi_exceprt_length', 11);
+					add_filter('excerpt_length', 'steps_exceprt_length', 11);
 					?>
 					<div class="head">
 						<h5>In the News</h5>
@@ -266,7 +266,7 @@ get_header();
 							<?php the_excerpt(); ?>
 							<a href="<?php the_permalink(); ?>" class="more small">MORE<span class="arr">&nbsp;</span></a>
 							<?php 
-							nossi_share_icons(get_permalink(), get_the_title());
+							steps_share_icons(get_permalink(), get_the_title());
 						endwhile;
 						wp_reset_query(); ?>
 					</div>

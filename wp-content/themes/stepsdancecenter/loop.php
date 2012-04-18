@@ -14,7 +14,7 @@
 			<a href="<?php the_permalink(); ?>" class="more">Read More<span class="arr">&nbsp;</span></a>
 
 			<div class="blog-foot">
-				<?php nossi_share_icons_large(get_permalink(), get_the_title()); ?>
+				<?php steps_share_icons_large(get_permalink(), get_the_title()); ?>
 				<?php the_tags('<p class="tags">Tags: ', ', ', '</p>'); ?>
 			</div>
 		</div>

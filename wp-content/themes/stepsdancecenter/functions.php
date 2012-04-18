@@ -127,7 +127,7 @@ function attach_theme_options() {
 	include_once('options/theme-shortcodes.php');
 }
 
-function nossi_sort_programs($a, $b) {
+function steps_sort_programs($a, $b) {
 	$x = get_metadata("taxonomy", $a->term_id, 'program_order', true);
 	if (!$x) {
 		$x = 0;
@@ -139,7 +139,7 @@ function nossi_sort_programs($a, $b) {
 	return strcmp($x, $y);
 }
 
-function nossi_sort_gallery_categories($a, $b) {
+function steps_sort_gallery_categories($a, $b) {
 	$x = get_metadata("taxonomy", $a->term_id, 'gallery_category_order', true);
 	if (!$x) {
 		$x = 0;
@@ -151,7 +151,7 @@ function nossi_sort_gallery_categories($a, $b) {
 	return strcmp($x, $y);
 }
 
-function nossi_share_icons($link, $title) {
+function steps_share_icons($link, $title) {
 	?>
 	<div class="social-icons">
 		<a href="http://twitter.com/home?status= <?php echo $link; ?>" class="tw" target="_blank"></a>
@@ -161,7 +161,7 @@ function nossi_share_icons($link, $title) {
 	<?php
 }
 
-function nossi_share_icons_large($link, $title) {
+function steps_share_icons_large($link, $title) {
 	?>
 	<div class="social">
 		<a href="http://twitter.com/home?status= <?php echo $link; ?>" class="tw" target="_blank"><span class="icon">&nbsp;</span>Tweet This</a><span class="div">&nbsp;</span>
@@ -170,23 +170,23 @@ function nossi_share_icons_large($link, $title) {
 	<?php
 }
 
-add_filter('excerpt_length', 'nossi_exceprt_length_long');
-function nossi_exceprt_length($length) {
+add_filter('excerpt_length', 'steps_exceprt_length_long');
+function steps_exceprt_length($length) {
 	return 13;
 }
-function nossi_exceprt_length_average($length) {
+function steps_exceprt_length_average($length) {
 	return 26;
 }
-function nossi_exceprt_length_long($length) {
+function steps_exceprt_length_long($length) {
 	return 120;
 }
 
-add_filter('excerpt_more', 'nossi_excerpt_more');
-function nossi_excerpt_more($more) {
+add_filter('excerpt_more', 'steps_excerpt_more');
+function steps_excerpt_more($more) {
 	return '...';
 }
 
-function nossi_blog_title() {
+function steps_blog_title() {
 	$id = get_option('page_for_posts');
 	if ($id) {
 		$title = get_the_title($id);
@@ -196,7 +196,7 @@ function nossi_blog_title() {
 	echo $title;
 }
 
-function nossi_student_profiles_section() {
+function steps_student_profiles_section() {
 	global $post;
 	?>
 	<div class="cbox">
@@ -246,8 +246,8 @@ function nossi_student_profiles_section() {
 	<?php
 }
 
-add_filter('the_content', 'nossi_clean_shortcode_content');
-function nossi_clean_shortcode_content( $content ) {
+add_filter('the_content', 'steps_clean_shortcode_content');
+function steps_clean_shortcode_content( $content ) {
     /* Parse nested shortcodes and add formatting. */
     $content = trim( wpautop( do_shortcode( $content ) ) );
 
@@ -268,7 +268,7 @@ function nossi_clean_shortcode_content( $content ) {
 remove_filter('the_content', 'wpautop');
 add_filter('the_content', 'wpautop', 13);
 
-function nossi_degree_nav() {
+function steps_degree_nav() {
 	?>
 	<div class="degree-nav">
 		<ul>
@@ -281,7 +281,7 @@ function nossi_degree_nav() {
 	<?php
 }
 
-function nossi_autolink_footer_menu_titles($title) {
+function steps_autolink_footer_menu_titles($title) {
 	$p = get_page_by_path(sanitize_title_with_dashes($title));
 	if ($p) {
 		$title = '<a href="' . get_permalink($p->ID) . '">' . $title . '</a>';

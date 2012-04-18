@@ -2,12 +2,12 @@
 
 add_shortcode('left', 'shortcode_left');
 function shortcode_left($atts, $content = '') {
-	return nossi_clean_shortcode_content('<div class="article-left">' . nossi_clean_shortcode_content($content) . '</div>');
+	return steps_clean_shortcode_content('<div class="article-left">' . steps_clean_shortcode_content($content) . '</div>');
 }
 
 add_shortcode('right', 'shortcode_right');
 function shortcode_right($atts, $content = '') {
-	return nossi_clean_shortcode_content('<div class="article-right">' . nossi_clean_shortcode_content($content) . '</div>');
+	return steps_clean_shortcode_content('<div class="article-right">' . steps_clean_shortcode_content($content) . '</div>');
 }
 
 add_shortcode('blue_button', 'shortcode_blue_button');
@@ -50,7 +50,7 @@ function shortcode_opensection($atts, $content='') {
   <div class="cbox" style="padding-bottom:0;">
     <div class="cbox-t"></div>
     <div class="cbox-c">'
-      .nossi_clean_shortcode_content($content).
+      .steps_clean_shortcode_content($content).
     '<style>
       .tbox { float: right; margin-top: 30px; }
       #sidebar { position: absolute; left: 50%; margin-left: -477px; float: none;}
@@ -59,7 +59,7 @@ function shortcode_opensection($atts, $content='') {
 
 add_shortcode('four_boxes', 'shortcode_four_boxes');
 function shortcode_four_boxes($atts, $content = '') {
-	return nossi_clean_shortcode_content('<div class="right linksbox">' . nossi_clean_shortcode_content($content) . '<div class="cl">&nbsp;</div></div>');
+	return steps_clean_shortcode_content('<div class="right linksbox">' . steps_clean_shortcode_content($content) . '<div class="cl">&nbsp;</div></div>');
 }
 
 add_shortcode('four_boxes_item', 'shortcode_four_boxes_item');
@@ -103,7 +103,7 @@ function shortcode_contact_details($atts, $content = '') {
 
 add_shortcode('deadlines', 'shortcode_deadlines');
 function shortcode_deadlines($atts, $content = '') {
-	return nossi_clean_shortcode_content('<div class="deadlines">' . nossi_clean_shortcode_content($content) . '<div class="cl">&nbsp;</div></div>');
+	return steps_clean_shortcode_content('<div class="deadlines">' . steps_clean_shortcode_content($content) . '<div class="cl">&nbsp;</div></div>');
 }
 
 add_shortcode('video', 'shortcode_video');
