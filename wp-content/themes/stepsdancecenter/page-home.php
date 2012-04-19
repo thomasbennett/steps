@@ -8,12 +8,12 @@ get_header();
 	<ul>
 		<?php 
 		$count = 0;
-		query_posts('post_type=home_slide_1&posts_per_page=-1&orderby=menu_order&order=ASC'); 
+		query_posts('post_type=home_slide&posts_per_page=-1&orderby=menu_order&order=ASC'); 
 		while(have_posts()): 
 			the_post();
 			$count++;
-			$bg = get_meta('_home_slide_1_bg');
-			$img = get_meta('_home_slide_1_img');
+			$bg = get_meta('_home_slide_bg');
+			$img = get_meta('_home_slide_img');
 			?>
 			<li>
 				<?php if ($bg): ?>

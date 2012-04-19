@@ -22,7 +22,7 @@
   <?php endif; ?>
 
   <nav>
-    <?php wp_nav_menu('theme_location=main-menu&fallback_cb=&container='); ?>
+    <?php wp_nav_menu('menu=primary&fallback_cb=&container='); ?>
   </nav>
 
   <?php get_search_form(); ?>

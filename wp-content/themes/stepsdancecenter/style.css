@@ -77,7 +77,7 @@ a:hover, a:active { outline: none; }
 ul, ol { margin-left: 0; list-style: none; }
 ol { list-style-type: decimal; }
 
-/* Remove margins for navigation lists */
+/* Remove margins for menu-primary lists */
 nav ul, nav li { margin: 0; list-style:none; list-style-image: none; }
 
 small { font-size: 85%; }
@@ -149,6 +149,35 @@ button {  width: auto; overflow: visible; }
 /* custom styles */
 
 
+/* menu-primary */
+nav ul#menu-primary > li > ul { display: none; }
+nav ul#menu-primary li:hover > .sub-menu { display: block; }
+
+#slideshow { position:relative; z-index: 2; background:url(images/header.png) repeat-x 0 0;  width:100%; overflow:hidden; }
+#slideshow .jcarousel-clip { width:100%; height:449px; position:relative; overflow:hidden }
+#slideshow .jcarousel-container { z-index: 1; }
+#slideshow ul {width:100%; height:449px; position:relative; overflow:hidden  }
+#slideshow li { padding-top:94px; position:relative; width:100%; height:355px; overflow:hidden; float:left; }
+#slideshow li>img {  position:absolute; left:0; width:100%; min-width:1250px; top:94px; z-index: 1; }
+#slideshow li .shell { z-index: 2; height:355px;  }
+#slideshow li .shell .slp { position:absolute; bottom:0; right:-6px;  }
+#slideshow li .caption { width:310px; padding-top:65px;  }
+#slideshow li .caption h2 { font-size:25px; line-height:32px; color:#fff; text-align:left;  font-family: 'oswald'; }
+#slideshow li .caption h2 span { background-color:#0079c1;  display:inline-block; margin-bottom:6px;  padding:5px 10px ;  }
+#slideshow li .caption .wrap { padding-left:10px;  }
+#slideshow li .caption .wrap p { font-size:16px; color:#fff; line-height:20px; padding-bottom:10px;   }
+#slideshow li .caption .wrap a.more { color:#fff;   }
+#slideshow .dots { position:absolute; z-index: 2; width:100%; height:14px;  left:0;  top:420px;  }
+#slideshow .dots .shell { height:14px; width:940px; }
+#slideshow .dots a { float:left; width:14px; height:14px; margin-right:3px; background:url(images/dot2.png);     }
+#slideshow .dots a.active,
+#slideshow .dots a:hover { background-position:0 bottom;  }
+
+.social-icons { padding-top:10px;  }
+.social-icons a { float:left; width:21px; height:22px; margin:0 2px;  }
+.social-icons a:hover { background-position:0 bottom;  }
+.social-icons a.tw { background-image:url(images/tw2.png);  }
+.social-icons a.fb { background-image:url(images/fb2.png); width:22px; }
 
 
 

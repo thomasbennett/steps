@@ -22,7 +22,7 @@ register_post_type('home_slide', array(
 	'_edit_link' =>  'post.php?post=%d',
 	'rewrite' => false,
 	'query_var' => true,
-	'supports' => array('title', 'editor', 'page-attributes'),
+	'supports' => array('title', 'page-attributes'),
 	'menu_position' => 101,
 ));
 
