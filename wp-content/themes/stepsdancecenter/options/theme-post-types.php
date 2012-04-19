@@ -28,7 +28,7 @@ register_post_type('home_slide', array(
 
 register_post_type('gallery', array(
 	'labels' => array(
-		'name'	 => 'Student Gallery',
+		'name'	 => 'Gallery',
 		'singular_name' => 'Gallery Entry',
 		'add_new' => __( 'Add New' ),
 		'add_new_item' => __( 'Add new Gallery Entry' ),
@@ -49,7 +49,7 @@ register_post_type('gallery', array(
 	'rewrite' => false,
 	'query_var' => true,
 	'supports' => array('title', 'page-attributes', 'thumbnail', 'editor'),
-	'menu_position' => 104,
+	'menu_position' => 102,
 ));
 
 register_taxonomy(
@@ -74,54 +74,4 @@ register_taxonomy(
     'query_var' => true,
     'rewrite' => false,
 ));
-
-register_post_type('custom-gallery', array(
-	'labels' => array(
-		'name'	 => 'Custom Gallery',
-		'singular_name' => 'Gallery Entry',
-		'add_new' => __( 'Add New' ),
-		'add_new_item' => __( 'Add new Gallery Entry' ),
-		'view_item' => 'View Gallery Entry',
-		'edit_item' => 'Edit Gallery Entry',
-	    'new_item' => __('New Gallery Entry'),
-	    'view_item' => __('View Gallery Entry'),
-	    'search_items' => __('Search Gallery'),
-	    'not_found' =>  __('No entries found'),
-	    'not_found_in_trash' => __('No entries found in Trash'),
-	),
-	'public' => false,
-	'exclude_from_search' => true,
-	'show_ui' => true,
-	'capability_type' => 'post',
-	'hierarchical' => false,
-	'_edit_link' =>  'post.php?post=%d',
-	'rewrite' => false,
-	'query_var' => true,
-	'supports' => array('title', 'page-attributes', 'thumbnail', 'editor'),
-	'menu_position' => 104,
-));
-
-register_taxonomy(
-    'custom_gallery_category', 
-    array('custom-gallery'), 
-        array(
-        'hierarchical' => true,
-        'labels' => array(
-        'name' => _x( 'Gallery Categories', 'taxonomy general name' ),
-        'singular_name' => _x( 'Gallery Category', 'taxonomy singular name' ),
-        'search_items' =>  __( 'Search Gallery Categories' ),
-        'all_items' => __( 'All Gallery Categories' ),
-        'parent_item' => __( 'Parent Gallery Category' ),
-        'parent_item_colon' => __( 'Parent Gallery Category:' ),
-        'edit_item' => __( 'Edit Gallery Category' ), 
-        'update_item' => __( 'Update Gallery Category' ),
-        'add_new_item' => __( 'Add New Gallery Category' ),
-        'new_item_name' => __( 'New Gallery Category Name' ),
-        'menu_name' => __( 'Gallery Categories' ),
-    ),
-    'show_ui' => true,
-    'query_var' => true,
-    'rewrite' => false,
-));
-
 ?>

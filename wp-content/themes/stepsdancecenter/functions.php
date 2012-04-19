@@ -13,9 +13,6 @@ function theme_init_theme() {
 		wp_enqueue_script('jquery-jscrollpane', get_bloginfo('stylesheet_directory') . '/js/jquery.jscrollpane.js', array('jquery', 'jquery-mousewheel'), '2.0');
 		wp_enqueue_script('jquery-theme-custom', get_bloginfo('stylesheet_directory') . '/js/functions.js', array('jquery-fancybox', 'jquery-tiptip', 'jquery-jcarousel', 'jquery-jscrollpane'), '1.0');
         
-        // live person javascript
-		wp_enqueue_script('liveperson', get_bloginfo('stylesheet_directory') . '/js/liveperson.js', array('jquery','jquery-theme-custom'));
-		
 		wp_enqueue_style('jquery-tiptip', get_bloginfo('stylesheet_directory') . '/tipTip.css', array(), '1.3');
 		wp_enqueue_style('jquery-jscrollpane', get_bloginfo('stylesheet_directory') . '/jquery.jscrollpane.css', array(), '2.0');
 		wp_enqueue_style('jquery-fancybox', get_bloginfo('stylesheet_directory') . '/fancybox/jquery.fancybox-1.3.4.css', array(), '1.3.4');
@@ -45,15 +42,6 @@ function theme_setup_theme() {
 	add_image_size('post_normal', 270, 150, true);
 	add_image_size('gallery_large', 748, 374, true);
 	add_image_size('gallery_small', 48, 48, true);
-	add_image_size('student_slide', 310, 196, true);
-	add_image_size('student_thumb', 48, 48, true);
-
-	# Register Theme Menu Locations
-	register_nav_menus(array(
-		'main-menu'=>__('Main Menu'),
-		'top-menu'=>__('Top Menu'),
-		'student-life-menu'=>__('Student Life Menu'),
-	));
 
 	# Register CPTs
 	include_once('options/theme-post-types.php');
@@ -84,15 +72,7 @@ function theme_widgets_init() {
 		'after_title' => '</h6>',
 	));
 	register_sidebar(array(
-		'name' => 'Blog Sidebar',
-		'id' => 'blog-sidebar',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h6 class="widgettitle">',
-		'after_title' => '</h6>',
-	));
-	register_sidebar(array(
-		'name' => 'Bottom Widgets',
+		'name' => 'Post Sidebar',
 		'id' => 'bottom-widgets',
 		'before_widget' => '<div id="%1$s" class="bottom_widget widget %2$s">',
 		'after_widget' => '</div>',
@@ -100,7 +80,7 @@ function theme_widgets_init() {
 		'after_title' => '</h6>',
 	));
 	register_sidebar(array(
-		'name' => 'Footer Widgets',
+		'name' => 'Page Sidebar',
 		'id' => 'footer-widgets',
 		'before_widget' => '<div id="%1$s" class="widget col %2$s">',
 		'after_widget' => '</div>',
@@ -196,56 +176,6 @@ function steps_blog_title() {
 	echo $title;
 }
 
-function steps_student_profiles_section() {
-	global $post;
-	?>
-	<div class="cbox">
-		<div class="cbox-t"></div>
-		<div class="cbox-c">
-			<h1>Nossi Students<span>&nbsp;</span></h1>
-			<?php
-			if (is_page('student-profiles')) {
-				the_content();
-			} else {
-				$page = get_page_by_path('student-life/student-profiles');
-				echo apply_filters('the_content', $page->post_content);
-			}
-			?>
-		</div>
-		<div class="cbox-b"></div>
-	</div>
-	<div class="cbox">
-		<div class="cbox-t"></div>
-		<div class="cbox-c">
-			<h1>Student Profiles<span>&nbsp;</span></h1>
-			<div class="profile-cols">
-				<?php 
-				$count = 0;
-				query_posts('post_type=student&posts_per_page=-1&orderby=menu_order&order=ASC');
-				while(have_posts()): 
-					$count++;
-					the_post(); 
-					$img = get_meta('_student_main_image');
-					?>
-					<div class="col">
-						<?php if ($img): ?>
-							<a href="<?php the_permalink(); ?>"><img src="<?php echo ecf_get_image_url($img); ?>" width="136" alt="" /></a>
-						<?php endif ?>
-						<h4 class="custom<?php echo $count; ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-						<?php echo wpautop(get_meta('_student_specialty')); ?>
-					</div>
-					<?php 
-				endwhile;
-				wp_reset_query(); 
-				?>
-				<div class="cl">&nbsp;</div>
-			</div>
-		</div>
-		<div class="cbox-b"></div>
-	</div>
-	<?php
-}
-
 add_filter('the_content', 'steps_clean_shortcode_content');
 function steps_clean_shortcode_content( $content ) {
     /* Parse nested shortcodes and add formatting. */
@@ -267,19 +197,6 @@ function steps_clean_shortcode_content( $content ) {
 
 remove_filter('the_content', 'wpautop');
 add_filter('the_content', 'wpautop', 13);
-
-function steps_degree_nav() {
-	?>
-	<div class="degree-nav">
-		<ul>
-			<li class="link1 <?php echo (is_page('photography')) ? 'current' : ''; ?>"><a href="<?php permapath('degree-programs/photography'); ?>"><span>Photography</span></a></li>
-			<li class="link2 <?php echo (is_page('video')) ? 'current' : ''; ?>"><a href="<?php permapath('degree-programs/video'); ?>"><span>Videography</span></a></li>
-			<li class="link3 <?php echo (is_page('illustration')) ? 'current' : ''; ?>"><a href="<?php permapath('degree-programs/illustration'); ?>"><span>Illustration</span></a></li>
-			<li class="link4 <?php echo (is_page('graphic-design')) ? 'current' : ''; ?>"><a href="<?php permapath('degree-programs/graphic-design'); ?>"><span>Graphic Design</span></a></li>
-		</ul>
-	</div>
-	<?php
-}
 
 function steps_autolink_footer_menu_titles($title) {
 	$p = get_page_by_path(sanitize_title_with_dashes($title));
