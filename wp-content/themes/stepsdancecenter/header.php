@@ -24,6 +24,4 @@
   <nav>
     <?php wp_nav_menu('menu=primary&fallback_cb=&container='); ?>
   </nav>
-
-  <?php get_search_form(); ?>
 </header>

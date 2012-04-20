@@ -1,23 +1,23 @@
+<?php if(have_posts()): while(have_posts()): the_post(); endwhile; endif; ?>
+<?php wp_reset_query(); ?>
+
 <?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
-		<div class="blog-article">
+		<article>
 			<?php if (has_post_thumbnail()): ?>
 				<?php the_post_thumbnail('post_large', array('class' => 'wide-img')) ?>
 			<?php endif ?>
-			<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+      <?php if( get_post_type() == 'page' ): ?>
+        <h1><?php the_title(); ?></h1>
+      <?php endif; ?>
 
 			<?php if (get_post_type() == 'post'): ?>
+        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 				<p class="info"><em>By</em>: <strong><?php the_author_posts_link(); ?></strong><span>|</span> <strong><?php the_time('M d, Y h:i a') ?></strong></p>
 			<?php endif ?>
 
-			<?php the_excerpt(); ?>
-			<a href="<?php the_permalink(); ?>" class="more">Read More<span class="arr">&nbsp;</span></a>
-
-			<div class="blog-foot">
-				<?php steps_share_icons_large(get_permalink(), get_the_title()); ?>
-				<?php the_tags('<p class="tags">Tags: ', ', ', '</p>'); ?>
-			</div>
-		</div>
+			<div class="entry"><?php the_content(); ?></div>
+		</article>
 	<?php endwhile; ?>
 
 	<?php if (  $wp_query->max_num_pages > 1 && function_exists('wp_pagenavi') ) : ?>

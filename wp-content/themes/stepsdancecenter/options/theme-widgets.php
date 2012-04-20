@@ -79,7 +79,7 @@ class LatestTweets extends ThemeWidgetBase {
             '<small>' + 
               '<a href="http://twitter.com/intent/tweet?in_reply_to='+cta+'">reply</a> - ' +
               '<a href="http://twitter.com/intent/retweet?tweet_id='+replyto+'">retweet</a> - ' + 
-              '<a href="http://twitter.com/intent/favorite?tweet_id='+replyto+'">favorite</a> - ' + 
+              '<a href="http://twitter.com/intent/favorite?tweet_id='+replyto+'">favorite</a>' + 
           '</div>'
         );
       });
