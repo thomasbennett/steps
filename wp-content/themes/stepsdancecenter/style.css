@@ -56,7 +56,7 @@ input, select { vertical-align: middle; padding-top: 2px !important; }
  * Font normalization inspired by YUI Library's fonts.css: developer.yahoo.com/yui/
  */
 
-body { background: #999; font:13px/1.231 sans-serif; *font-size:small; } /* Hack retained to preserve specificity */
+body { background: #fff; font:13px/1.231 sans-serif; *font-size:small; } /* Hack retained to preserve specificity */
 select, input, textarea, button { font:99% sans-serif; }
 
 /* Normalize monospace sizing:
@@ -147,31 +147,60 @@ button {  width: auto; overflow: visible; }
 .ie7 img { -ms-interpolation-mode: bicubic; }
 
 /* custom styles */
+/* author: Thomas Bennett */
 
+.center, .full-center { 
+  margin: 0 auto;
+  max-width: 960px; 
+  position: relative;
+} .full-center { max-width: 1200px !important; }
+
+a { color: #d423a6; text-decoration: underline; }
+a:hover { color: #ae119b; text-decoration: none; }
+
+header {
+  background: #000;
+  width: 100%;
+}
+
+#header-bg {
+  background: url('images/header-bg.png') no-repeat;
+  height: 506px;
+  left: 50%;
+  margin-left: -600px;
+  position: absolute;
+  width: 1200px;
+  z-index: 6;
+}
+
+#logo {
+  background: url('images/logo.jpg') no-repeat;
+  height: 135px;
+  overflow: hidden;
+  position: absolute;
+  text-indent: -999em;
+  width: 211px;
+  z-index: 3;
+}
 
 /* menu-primary */
+nav { 
+  background: url('images/nav-bg.png') repeat-x;
+  height: 36px;
+  position: absolute; 
+  right: 0;
+  z-index: 4; 
+}
 nav ul#menu-primary > li > ul { display: none; }
 nav ul#menu-primary li:hover > .sub-menu { display: block; }
+#menu-primary li { display: inline-block; float: left; }
 
-#slideshow { position:relative; z-index: 2; background:url(images/header.png) repeat-x 0 0;  width:100%; overflow:hidden; }
-#slideshow .jcarousel-clip { width:100%; height:449px; position:relative; overflow:hidden }
+#slideshow { position:relative; z-index: 2; width:100%; overflow:hidden; }
+#slideshow .jcarousel-clip { width:100%; height: 506px; position:relative; overflow:hidden }
 #slideshow .jcarousel-container { z-index: 1; }
-#slideshow ul {width:100%; height:449px; position:relative; overflow:hidden  }
-#slideshow li { padding-top:94px; position:relative; width:100%; height:355px; overflow:hidden; float:left; }
-#slideshow li>img {  position:absolute; left:0; width:100%; min-width:1250px; top:94px; z-index: 1; }
-#slideshow li .shell { z-index: 2; height:355px;  }
-#slideshow li .shell .slp { position:absolute; bottom:0; right:-6px;  }
-#slideshow li .caption { width:310px; padding-top:65px;  }
-#slideshow li .caption h2 { font-size:25px; line-height:32px; color:#fff; text-align:left;  font-family: 'oswald'; }
-#slideshow li .caption h2 span { background-color:#0079c1;  display:inline-block; margin-bottom:6px;  padding:5px 10px ;  }
-#slideshow li .caption .wrap { padding-left:10px;  }
-#slideshow li .caption .wrap p { font-size:16px; color:#fff; line-height:20px; padding-bottom:10px;   }
-#slideshow li .caption .wrap a.more { color:#fff;   }
-#slideshow .dots { position:absolute; z-index: 2; width:100%; height:14px;  left:0;  top:420px;  }
-#slideshow .dots .shell { height:14px; width:940px; }
-#slideshow .dots a { float:left; width:14px; height:14px; margin-right:3px; background:url(images/dot2.png);     }
-#slideshow .dots a.active,
-#slideshow .dots a:hover { background-position:0 bottom;  }
+#slideshow ul {width:100%; height: 506px; position:relative; overflow:hidden  }
+#slideshow li { position:relative; width:100%; height: 506px; overflow:hidden; float:left; }
+#slideshow li > img {  z-index: 1; }
 
 .social-icons { padding-top:10px;  }
 .social-icons a { float:left; width:21px; height:22px; margin:0 2px;  }
@@ -303,8 +332,6 @@ nav ul#menu-primary li:hover > .sub-menu { display: block; }
 /* iPad [landscape] */
 @media only screen and (max-device-width: 1024px) and (min-device-width: 768px) and (orientation:portrait) {
  body { 
-  background: #545454 url('images/bg1.jpg') center top no-repeat fixed; 
-  -webkit-background-size: 980px 1200px;
  }
  
  #container {
@@ -353,8 +380,6 @@ nav ul#menu-primary li:hover > .sub-menu { display: block; }
 /* iphone 3 */
 @media only screen and (max-device-width: 480px) and (min-device-width: 320px) {
  body { 
-   background: #545454 url('images/bg1.jpg') center top no-repeat fixed; 
-   -webkit-background-size: 980px 1200px;
  }
  #container {
     margin: 0 auto;
@@ -367,8 +392,6 @@ nav ul#menu-primary li:hover > .sub-menu { display: block; }
 /* iphone 4 */
 @media only screen and (max-device-width: 960px) and (min-device-width: 640px) {
  body { 
-  background: #545454 url('images/bg1.jpg') center top no-repeat fixed; 
-  -webkit-background-size: 980px 1200px;
  }
  #container {
     margin: 0 auto;

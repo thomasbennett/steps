@@ -8,6 +8,7 @@
   <link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicon.ico" />
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
   <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+  <script src="<?php bloginfo('template_directory') ?>/js/modernizr-1.7.min.js"></script>
   <?php wp_head(); ?>
   <!--[if lte IE 8]>
   <![endif]-->
@@ -15,13 +16,23 @@
 
 <body>
 <header>
-  <?php if(is_home()): ?>
-    <h1 id="logo"><a href="<?php echo home_url('/'); ?>" class="notext"><?php bloginfo('name'); ?></a></h1>
-  <?php else: ?>
-    <h3 id="logo"><a href="<?php echo home_url('/'); ?>" class="notext"><?php bloginfo('name'); ?></a></h3>
-  <?php endif; ?>
+  <div id="header-bg"></div>
 
-  <nav>
-    <?php wp_nav_menu('menu=primary&fallback_cb=&container='); ?>
-  </nav>
+  <div class="center">
+    <?php if(is_home()): ?>
+      <h1 id="logo"><a href="<?php echo home_url('/'); ?>" class="notext"><?php bloginfo('name'); ?></a></h1>
+    <?php else: ?>
+      <h3 id="logo"><a href="<?php echo home_url('/'); ?>" class="notext"><?php bloginfo('name'); ?></a></h3>
+    <?php endif; ?>
+
+    <nav>
+      <?php wp_nav_menu('menu=primary&fallback_cb=&container='); ?>
+    </nav>
+  </div>
+
+  <?php if(is_front_page()): 
+  // don't close it
+  // instead, close after the slideshow
+  else: ?>
 </header>
+  <?php endif; ?>

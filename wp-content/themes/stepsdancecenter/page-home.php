@@ -4,7 +4,7 @@ Template Name: Home
 */
 get_header(); 
 ?>
-<div id="slideshow">
+<div id="slideshow" class="full-center">
 	<ul>
 		<?php 
 		$count = 0;
@@ -29,6 +29,9 @@ get_header();
 		<?php wp_reset_query(); ?>
 	</ul>
 </div>
+
+<?php // this is found in header.php and only closes here on this page ?>
+</header>
 
 <div id="callout-container">
   <article class="callout">
@@ -59,7 +62,9 @@ get_header();
   </article>
 </div>
 
-<?php get_sidebar(); ?>
+<aside>
+  <?php get_sidebar(); ?>
+</aside>
 
 <?php get_template_part('loop', 'index'); ?>
 

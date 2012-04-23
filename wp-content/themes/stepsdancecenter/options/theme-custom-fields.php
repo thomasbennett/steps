@@ -3,9 +3,8 @@
 $home_slide_settings =& new ECF_Panel('home_slide_settings', 'Slide Settings', 'home_slide', 'normal', 'high');
 $home_slide_settings->add_fields(array(
 	ECF_Field::factory('image', 'home_slide_bg', 'Background Image')
-		->set_size(0, 355)
-		->help_text('Maximum height: 355px. Larger images will be scaled proportionally to fit that size.'),
-	
+		->set_size(0, 506)
+		->help_text('Maximum height: 506px. Larger images will be scaled proportionally to fit that size.'),
 ));
 
 $page_settings =& new ECF_Panel('page_settings', 'Page Settings', 'page', 'normal', 'high');
