@@ -2,16 +2,16 @@
 
 add_shortcode('left', 'shortcode_left');
 function shortcode_left($atts, $content = '') {
-	return steps_clean_shortcode_content('<div class="article-left">' . steps_clean_shortcode_content($content) . '</div>');
+	return steps_clean_shortcode_content('<div class="left">' . steps_clean_shortcode_content($content) . '</div>');
 }
 
 add_shortcode('right', 'shortcode_right');
 function shortcode_right($atts, $content = '') {
-	return steps_clean_shortcode_content('<div class="article-right">' . steps_clean_shortcode_content($content) . '</div>');
+	return steps_clean_shortcode_content('<div class="right">' . steps_clean_shortcode_content($content) . '</div>');
 }
 
-add_shortcode('blue_button', 'shortcode_blue_button');
-function shortcode_blue_button($atts, $content = '') {
+add_shortcode('cta', 'shortcode_cta');
+function shortcode_cta($atts, $content = '') {
 	if (!isset($atts['link']) || !$atts['link']) {
 		$atts['link'] = '#';
 	}
@@ -24,37 +24,12 @@ function shortcode_blue_button($atts, $content = '') {
 	if (!isset($atts['size']) || $atts['size'] != 'big') {
 		$atts['size'] = 'small';
 	}
-	return '<a style="' . $atts['style'] . '" href="' . $atts['link'] . '" class="' . $atts['size'] . ' blue-btn ' . (isset($atts['align']) && $atts['align'] ? ' align' . $atts['align'] : '') . '"><span>' . $atts['text'] . '</span></a>';
+	return '<a style="' . $atts['style'] . '" href="' . $atts['link'] . '" class="' . $atts['size'] . ' cta ' . (isset($atts['align']) && $atts['align'] ? ' align' . $atts['align'] : '') . '"><span>' . $atts['text'] . '</span></a>';
 }
 
 add_shortcode('clear', 'shortcode_clear');
 function shortcode_clear($atts, $content = '') {
-	return '<div class="cl">&nbsp;</div>';
-}
-
-add_shortcode('endsection', 'shortcode_endsection');
-function shortcode_endsection($atts, $content = '') {
-  return '</div>';
-}
-
-add_shortcode('newsection', 'shortcode_opensection');
-function shortcode_opensection($atts, $content='') {
-  return '
-      </div> 
-    </div>
-    <div class="cbox-b"></div>
-  </div>
-  
-  <div class="cl"></div>
-
-  <div class="cbox" style="padding-bottom:0;">
-    <div class="cbox-t"></div>
-    <div class="cbox-c">'
-      .steps_clean_shortcode_content($content).
-    '<style>
-      .tbox { float: right; margin-top: 30px; }
-      #sidebar { position: absolute; left: 50%; margin-left: -477px; float: none;}
-    </style>';
+	return '<div class="clear"></div>';
 }
 
 add_shortcode('four_boxes', 'shortcode_four_boxes');
@@ -88,17 +63,6 @@ function shortcode_single_link($atts, $content = '') {
 		$atts['title'] = 'Link Title Here';
 	}
 	return '<a href="' . $atts['link'] . '" class="more">' . (isset($atts['image']) && $atts['image'] ? '<img src="' . $atts['image'] . '" alt="" />' : '') . $atts['title'] . '<span class="arr">&nbsp;</span></a>';
-}
-
-add_shortcode('contact_details', 'shortcode_contact_details');
-function shortcode_contact_details($atts, $content = '') {
-	if (!isset($atts['email']) || !$atts['email']) {
-		$atts['email'] = get_bloginfo('admin_email');
-	}
-	if (!isset($atts['phone']) || !$atts['phone']) {
-		$atts['phone'] = '1.800.566.6811';
-	}
-	return '<div class="right contactbox"><p class="phone"><span class="blue">Contact Us via Phone</span><strong>' . $atts['phone'] . '</strong></p><p class="email"><a href="mailto:' . $atts['email'] . '" class="more">Email<span class="arr">&nbsp;</span><img src="' . get_bloginfo('stylesheet_directory') . '/images/ic6.png" alt="" /></a></p></div>';
 }
 
 add_shortcode('deadlines', 'shortcode_deadlines');
@@ -313,6 +277,27 @@ function shortcode_gallery_popup($atts, $content = '') {
 	<?php
 	$html = ob_get_clean();
 	return $html;
+}
+
+// accordion (page specific and general)
+add_shortcode('accordion', 'shortcode_accordion');
+function shortcode_accordion($atts, $content = ''){
+  return steps_clean_shortcode_content('<div class="accordion">'.steps_clean_shortcode_content($content) .'</div>');
+}
+
+add_shortcode('block', 'shortcode_block');
+function shortcode_block($atts, $content = ''){
+  return steps_clean_shortcode_content('<div class="accordion-content">'.steps_clean_shortcode_content($content) .'</div>');
+}
+
+add_shortcode('title', 'shortcode_title');
+function shortcode_title($atts, $content = '') {
+	return steps_clean_shortcode_content('<a href="#" class="aclink">' . steps_clean_shortcode_content($content) . '</a>');
+}
+
+add_shortcode('body', 'shortcode_body');
+function shortcode_body($atts, $content = ''){
+  return steps_clean_shortcode_content('<div class="acc">'.steps_clean_shortcode_content($content) .'</div>');
 }
 
 ?>

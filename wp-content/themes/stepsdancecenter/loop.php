@@ -1,6 +1,16 @@
 <?php if(have_posts()): while(have_posts()): the_post(); endwhile; endif; ?>
 <?php wp_reset_query(); ?>
 
+<?php if(is_page('Faculty')): 
+  $clean_title = urlencode(str_replace(array('*', '  '), array('', ' '), get_the_title()));
+  $beautiful_title_pieces = explode('*', get_the_title());
+  foreach ($beautiful_title_pieces as &$piece) {
+    $piece = '<span>' . trim($piece) . '</span>';
+  }
+  $beautiful_title = implode('<br />', $beautiful_title_pieces);
+endif; ?>
+
+
 <div id="content">
 <?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>

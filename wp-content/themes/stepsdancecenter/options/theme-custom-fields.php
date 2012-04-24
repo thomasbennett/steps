@@ -28,13 +28,13 @@ $page_settings->add_fields(array(
 $gallery_settings =& new ECF_Panel('gallery_settings', 'Gallery Entry Settings', 'gallery', 'normal', 'high');
 $gallery_settings->show_on_taxonomy_term('gallery_category', 'video');
 $gallery_settings->add_fields(array(
-	ECF_FIeld::factory('text', 'gallery_video_url', 'Video URL')
+	ECF_Field::factory('text', 'gallery_video_url', 'Video URL')
 ));
 
 $gallery_settings =& new ECF_Panel('custom_gallery_settings', 'Gallery Entry Settings', 'custom-gallery', 'normal', 'high');
 $gallery_settings->show_on_taxonomy_term('custom_gallery_category', 'video');
 $gallery_settings->add_fields(array(
-	ECF_FIeld::factory('text', 'custom_gallery_video_url', 'Video URL')
+	ECF_Field::factory('text', 'custom_gallery_video_url', 'Video URL')
 ));
 
 ?>

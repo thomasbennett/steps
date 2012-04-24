@@ -49,9 +49,13 @@ get_header();
     <?php if(have_posts()): while(have_posts()): the_post(); ?>
       <h2 class="add-icon"><?php the_title(); ?></h2>
       <div class="entry"><?php the_excerpt(); ?></div>
+      <?php $cta = get_meta('_home_spotlight_button'); ?>
+      <?php $cta_link = get_meta('_home_spotlight_link'); ?>
+      <?php if ($cta): ?>
+        <a class="cta" href="<?php echo $cta_link ?>"><?php echo $cta; ?></a>
+      <?php endif; ?>
     <?php endwhile; endif; ?>
     <?php wp_reset_query(); ?>
-    <a class="cta" href="<?php echo get_meta('_home_spotlight_link'); ?>"><?php echo get_meta('_home_spotlight_button'); ?></a>
   </article>
 
   <article class="callout">

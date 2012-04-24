@@ -24,12 +24,15 @@ jQuery(function($) {
     $('.aclink').on('click', function(){
       var thislink = $(this);
       if(thislink.hasClass('current')) { 
-        thislink.removeClass('current').siblings('.acc').slideUp(200);
+        thislink.removeClass('current').siblings('.acc').slideUp(200).parent().removeClass('current');
+        thislink.find('img').animate({'width':'50px', 'height':'50px'}, 600);
       } else {
-        $('.aclink').not(thislink).removeClass('current');
-        $('.aclink').not(thislink).siblings('.acc').slideUp(200);
-        thislink.addClass('current');
-        thislink.parents('.accordion-content').find('.acc').slideDown(200);
+        $('.aclink').not(thislink).removeClass('current').parent().removeClass('current');
+        $('.aclink').not(thislink).find('img').animate({'width':'50px', 'height':'50px'}, 600);
+        $('.aclink').not(thislink).siblings('.acc').slideUp(300);
+        thislink.addClass('current').parent().addClass('current');
+        thislink.parents('.accordion-content').find('.acc').slideDown(300);
+        thislink.find('img').animate({'width':'150px', 'height':'150px'}, 300);
       }
       
       return false;

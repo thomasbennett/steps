@@ -153,6 +153,8 @@ button {  width: auto; overflow: visible; }
 .left { float: left; }
 .right { float: right; }
 .clear { clear: both; }
+.alignleft { float: left; margin: 0 15px 0 0; }
+.alignright { float: right; margin: 0 0 0 15px; }
 
 /* icons */
 .events-icon { 
@@ -199,7 +201,22 @@ body {
 a { color: #d423a6; text-decoration: underline; }
 a:hover { color: #ae119b; text-decoration: none; }
 
-p { margin-bottom: 20px; }
+p { 
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+article li { 
+  font-size: 1.1em;
+  list-style: square;
+  margin-left: 1.6em;
+  margin-bottom: 5px;
+}
+
+article ul {
+  margin-bottom: 20px;
+}
 
 header {
   background: #000;
@@ -241,7 +258,7 @@ header .center { z-index: 999; }
 
 h1, h2, h3, h4 {
   font-family: 'Trebuchet MS', Tahoma, Arial, sans-serif;
-  color: #444;
+  color: #222;
   margin-bottom: 10px;
 }
 
@@ -343,7 +360,7 @@ nav #menu-primary {
 
 #content { 
   margin-top: 20px;
-  max-width: 640px;
+  max-width: 624px;
 }
 
 aside { 
@@ -427,6 +444,19 @@ aside {
 .video-tab .main-slider,
 .video-tab .main-slider .jcarousel-clip,
 .video-tab .main-slider li { height:485px; }
+
+/* accordion */
+.accordion-content { margin-bottom: 20px; }
+.accordion-content p { margin-bottom: 0; }
+.aclink { text-decoration: none; }
+.aclink .size-thumbnail { height: 50px; width: 50px; }
+.acc { display: none; }
+.accordion-content.current { 
+  background: #eee; 
+  border: 2px dotted #ccc;
+  margin-left: -15px;
+  padding: 15px;
+}
 
 
 
