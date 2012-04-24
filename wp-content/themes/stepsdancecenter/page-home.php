@@ -33,11 +33,12 @@ get_header();
 <?php // this is found in header.php and only closes here on this page ?>
 </header>
 
-<div id="callout-container">
+<div id="callout-container" class="center">
   <article class="callout">
+    <h2 class="events-icon">Upcoming Events</h2>
     <?php query_posts('post_type=post&posts_per_page=1'); ?>
     <?php if(have_posts()): while(have_posts()): the_post(); ?>
-      <h3><?php the_title(); ?><h3>
+      <h3><?php the_title(); ?></h3>
       <div class="entry"><?php the_excerpt(); ?></div>
     <?php endwhile; endif; ?>
     <?php wp_reset_query(); ?>
@@ -46,13 +47,15 @@ get_header();
   <article class="callout spotlight">
     <?php query_posts('pagename=homepage-callout'); ?> 
     <?php if(have_posts()): while(have_posts()): the_post(); ?>
-      <h3><?php the_title(); ?></h3>
+      <h2 class="add-icon"><?php the_title(); ?></h2>
       <div class="entry"><?php the_excerpt(); ?></div>
     <?php endwhile; endif; ?>
     <?php wp_reset_query(); ?>
+    <a class="cta" href="<?php echo get_meta('_home_spotlight_link'); ?>"><?php echo get_meta('_home_spotlight_button'); ?></a>
   </article>
 
   <article class="callout">
+    <h2 class="news-icon">The Latest News</h2>
     <?php query_posts('post_type=tribe_events&posts_per_page=1'); ?> 
     <?php if(have_posts()): while(have_posts()): the_post(); ?>
       <h3><?php the_title(); ?></h3>
@@ -60,12 +63,16 @@ get_header();
     <?php endwhile; endif; ?>
     <?php wp_reset_query(); ?>
   </article>
+  
+  <div class="clear"></div>
 </div>
 
-<aside>
-  <?php get_sidebar(); ?>
-</aside>
+<div class="center">
+  <aside>
+    <?php get_sidebar(); ?>
+  </aside>
 
-<?php get_template_part('loop', 'index'); ?>
+  <?php get_template_part('loop', 'index'); ?>
+</div>
 
 <?php get_footer(); ?>

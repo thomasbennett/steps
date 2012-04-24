@@ -16,13 +16,17 @@
 
 <body>
 <header>
-  <div id="header-bg"></div>
+  <?php if(is_front_page()): ?>
+    <div id="header-bg"></div>
+  <?php else: ?>
+    <div class="inner-header"></div>
+  <?php endif; ?>
 
   <div class="center">
     <?php if(is_home()): ?>
-      <h1 id="logo"><a href="<?php echo home_url('/'); ?>" class="notext"><?php bloginfo('name'); ?></a></h1>
+      <a href="<?php echo home_url('/'); ?>"><h1 id="logo"><?php bloginfo('name'); ?></h1></a>
     <?php else: ?>
-      <h3 id="logo"><a href="<?php echo home_url('/'); ?>" class="notext"><?php bloginfo('name'); ?></a></h3>
+      <a href="<?php echo home_url('/'); ?>"><h3 id="logo"><?php bloginfo('name'); ?></h3></a>
     <?php endif; ?>
 
     <nav>

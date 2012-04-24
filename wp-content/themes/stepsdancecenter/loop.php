@@ -1,6 +1,7 @@
 <?php if(have_posts()): while(have_posts()): the_post(); endwhile; endif; ?>
 <?php wp_reset_query(); ?>
 
+<div id="content">
 <?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
 		<article>
@@ -25,7 +26,7 @@
 			<?php wp_pagenavi(); ?>
 		</div>
 	<?php endif; ?>
-	
+
 <?php else : ?>
 	<div class="blog-article">
 		<h4>Not Found</h4>
@@ -49,3 +50,4 @@
 		</div>
 	</div>
 <?php endif; ?>
+</div>

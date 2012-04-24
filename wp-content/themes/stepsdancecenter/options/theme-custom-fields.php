@@ -7,9 +7,16 @@ $home_slide_settings->add_fields(array(
 		->help_text('Maximum height: 506px. Larger images will be scaled proportionally to fit that size.'),
 ));
 
+$home_spotlight =& new ECF_Panel('home_spotlight', 'Spotlight Details', 'page', 'normal', 'high');
+$home_spotlight->show_on_page('homepage-callout');
+$home_spotlight->add_fields(array(
+	ECF_Field::factory('text', 'home_spotlight_link', 'Link'),
+	ECF_Field::factory('text', 'home_spotlight_button', 'Button Text'),
+));
+
 $page_settings =& new ECF_Panel('page_settings', 'Page Settings', 'page', 'normal', 'high');
 $page_settings->add_fields(array(
-	ECF_FIeld::factory('choosesidebar', 'custom_bottom_sidebar', 'Bottom Sidebar')
+	ECF_Field::factory('choosesidebar', 'custom_bottom_sidebar', 'Bottom Sidebar')
 		->set_sidebar_options(array(
 			'before_widget' => '<div id="%1$s" class="bottom_widget widget %2$s">',
 			'after_widget' => '</div>',

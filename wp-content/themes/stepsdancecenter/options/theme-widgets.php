@@ -38,6 +38,8 @@ class LatestTweets extends ThemeWidgetBase {
 			echo $before_title . $instance['title'] . $after_title;
 		}		
 		?>
+    <?php $twittername = get_option('twitter_username'); ?>
+    <h3 class="twitter-icon">@<?php echo $twittername; ?></h3>
     <div class="twitter-box"></div>
     <?php 
 //      require_once __DIR__ . '/../lib/twitter/TwitterHelper.php';
@@ -48,7 +50,6 @@ class LatestTweets extends ThemeWidgetBase {
       require(dirname(__FILE__). '/../twitter-cache.php');
       $cache = new JG_Cache(dirname(__FILE__). '/../cache');
       $data = $cache->get('tweets');
-      $twittername = get_option('twitter_username');
 
       if ($data === FALSE)
       {
