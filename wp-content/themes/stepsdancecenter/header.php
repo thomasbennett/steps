@@ -16,7 +16,7 @@
 
 <body>
 <header>
-  <?php if(is_front_page()): ?>
+  <?php if(is_front_page() || is_page('Media')): ?>
     <div id="header-bg"></div>
   <?php else: ?>
     <div class="inner-header"></div>
@@ -34,7 +34,7 @@
     </nav>
   </div>
 
-  <?php if(is_front_page()): 
+  <?php if(is_front_page() || is_page('Media')): 
   // don't close it
   // instead, close after the slideshow
   else: ?>

@@ -110,7 +110,11 @@ function attach_theme_options() {
 
 	# Include shortcodes
 	include_once('options/theme-shortcodes.php');
+
+  # Custom Options / Functions
+  include_once('options/common-functions.php');
 }
+
 
 function steps_sort_programs($a, $b) {
 	$x = get_metadata("taxonomy", $a->term_id, 'program_order', true);
@@ -155,22 +159,6 @@ function steps_share_icons_large($link, $title) {
 	<?php
 }
 
-add_filter('excerpt_length', 'steps_exceprt_length_long');
-function steps_exceprt_length($length) {
-	return 13;
-}
-function steps_exceprt_length_average($length) {
-	return 26;
-}
-function steps_exceprt_length_long($length) {
-	return 120;
-}
-
-add_filter('excerpt_more', 'steps_excerpt_more');
-function steps_excerpt_more($more) {
-	return '...';
-}
-
 function steps_blog_title() {
 	$id = get_option('page_for_posts');
 	if ($id) {
@@ -179,35 +167,5 @@ function steps_blog_title() {
 		$title = 'Nossi Blog';
 	}
 	echo $title;
-}
-
-add_filter('the_content', 'steps_clean_shortcode_content');
-function steps_clean_shortcode_content( $content ) {
-    /* Parse nested shortcodes and add formatting. */
-    $content = trim( wpautop( do_shortcode( $content ) ) );
-
-    /* Remove '</p>' from the start of the string. */
-    if ( substr( $content, 0, 4 ) == '</p>' )
-        $content = substr( $content, 4 );
-
-    /* Remove '<p>' from the end of the string. */
-    if ( substr( $content, -3, 3 ) == '<p>' )
-        $content = substr( $content, 0, -3 );
-
-    /* Remove any instances of '<p></p>'. */
-    $content = str_replace( array( '<p></p>' ), '', $content );
-
-    return $content;
-}
-
-remove_filter('the_content', 'wpautop');
-add_filter('the_content', 'wpautop', 13);
-
-function steps_autolink_footer_menu_titles($title) {
-	$p = get_page_by_path(sanitize_title_with_dashes($title));
-	if ($p) {
-		$title = '<a href="' . get_permalink($p->ID) . '">' . $title . '</a>';
-	}
-	return $title;
 }
 ?>

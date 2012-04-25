@@ -3,10 +3,33 @@
 Template Name: Gallery
 */
 get_header(); 
-the_post();
 ?>
+<div id="slideshow" class="full-center">
+	<ul>
+		<?php 
+		$count = 0;
+		query_posts('post_type=home_slide&posts_per_page=-1&orderby=menu_order&order=ASC'); 
+		while(have_posts()): 
+			the_post();
+			$count++;
+			$bg = get_meta('_home_slide_bg');
+			$img = get_meta('_home_slide_img');
+			?>
+			<li>
+				<?php if ($bg): ?>
+					<img src="<?php echo ecf_get_image_url($bg); ?>" alt="" />
+				<?php endif ?>
+				<div class="center">
+					<?php if ($img): ?>
+						<img src="<?php echo ecf_get_image_url($img); ?>" class="slp" alt="" />
+					<?php endif ?>
+				</div>
+			</li>
+		<?php endwhile; ?>
+		<?php wp_reset_query(); ?>
+	</ul>
+</div>
 
-<h1><?php the_title(); ?></h1>
 <div class="gallery">
   <div class="gallery-nav">
     <ul>
@@ -82,9 +105,15 @@ the_post();
     </div>
     <?php wp_reset_query(); ?>
   <?php endforeach ?>
-  <?php get_sidebar(); ?>
+<?php // this is found in header.php and only closes here on this page ?>
+</header>
+
+<div class="center">
+  <aside>
+    <?php get_sidebar(); ?>
+  </aside>
+
+  <?php get_template_part('loop'); ?>
 </div>
 
-<!-- End of Main -->
-<?php get_sidebar('bottom'); ?>
 <?php get_footer(); ?>
