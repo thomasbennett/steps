@@ -155,8 +155,40 @@ button {  width: auto; overflow: visible; }
 .clear { clear: both; }
 .alignleft { float: left; margin: 0 15px 0 0; }
 .alignright { float: right; margin: 0 0 0 15px; }
+.cta {
+  background: url('images/cta-bg.jpg') repeat-x;
+  border: 1px solid #999;
+  color: #fff;
+  font-family: 'Trebuchet MS', Tahoma, Arial, sans-serif;
+  display: inline-block;
+  float: right;
+  font-size: 1.4em;
+  height: 28px;
+  min-height: 18px;
+  padding: 0 40px 0 20px;
+  position: relative;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 #444;
+}
+.cta:hover { 
+  border: 1px solid #666;
+  color: #eee;
+  opacity: .9;
+}
 
 /* icons */
+.action-icon {
+  background: url('images/signup-icon.png') no-repeat;
+  display: block;
+  float: right;
+  height: 19px;
+  opacity: .6;
+  position: absolute;
+  right: 5px;
+  top: 4px;
+  width: 20px;
+}
+
 .events-icon { 
   background: url('images/calendar-icon.jpg') no-repeat;
 }
@@ -294,14 +326,30 @@ nav #menu-primary {
 
 #menu-primary > li > ul { display: none; }
 
-#menu-primary > li:hover { background: #ddd; }
+#menu-primary > li:hover { background: #ddd; border-bottom: 5px solid #d423a6; }
 
 #menu-primary li:hover > .sub-menu { 
-  background: #9b9b9b url('images/nav-ext-bg.jpg') repeat top left;
+  background: #fff url('images/nav-ext-bg.jpg') repeat-x top left;
   display: block; 
   position: absolute;
-  left: 0;
+  left: -2px;
   top: 36px;
+}
+
+#menu-primary li:hover > .sub-menu a { 
+  border-top: 1px solid #ddd; 
+  display: block;
+  min-width: 148px;
+} 
+
+.sub-menu { 
+  border: 2px solid #666;
+  border-top: 4px solid #d423a6;;
+  padding-right: 4px;
+}
+.sub-menu li { 
+  background: none !important; 
+
 }
 
 #menu-primary a { 
@@ -327,10 +375,12 @@ nav #menu-primary {
 
 #callout-container { 
   background: url('images/transparent-bg.png') repeat; 
-  border: 1px solid #fff;
+  border: 1px solid #ccc;
   max-height: 200px;
+  margin-bottom: 20px;
   margin-top: -100px;
   padding: 10px 15px;
+  position: relative;
   z-index: 10;
 }
 
@@ -339,7 +389,9 @@ nav #menu-primary {
   border: 4px solid #666;
   float: left; 
   height: 150px;
+  line-height: 1.6;
   padding: 10px;
+  position: relative;
   width: 260px;
 }
 
@@ -347,6 +399,12 @@ nav #menu-primary {
   height: 180px;
   margin: -30px 28px;
   width: 300px;
+}
+
+.signup { 
+  bottom: 10px;
+  position: absolute; 
+  right: 10px;
 }
 
 .callout h3 { 

@@ -1,4 +1,5 @@
 <?php if (have_posts()) : ?>
+  <div id="content">
 	<?php while (have_posts()) : the_post(); ?>
     <section>
 			<?php if (has_post_thumbnail()): ?>
@@ -11,4 +12,5 @@
       </div>
 		</section>
 	<?php endwhile; ?>
+  </div>
 <?php endif; ?>

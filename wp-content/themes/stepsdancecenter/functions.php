@@ -55,6 +55,7 @@ function theme_setup_theme() {
 	add_action('wp_loaded', 'attach_theme_options');
 	add_action('wp_head', '_print_ie6_styles');
 
+  # Excerpts
 	function new_excerpt_more($more) {
     global $post;
     return get_the_excerpt().'<br /><br /><a class="moretag" href="'. get_permalink($post->ID) . '"> READ MORE</a>';

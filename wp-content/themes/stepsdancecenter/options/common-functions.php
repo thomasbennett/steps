@@ -1,22 +1,5 @@
 <?php
 
-# Excerpts
-add_filter('excerpt_length', 'excerpt_length_long');
-function exceprt_length($length) {
-	return 13;
-}
-function exceprt_length_average($length) {
-	return 26;
-}
-function exceprt_length_long($length) {
-	return 120;
-}
-
-add_filter('excerpt_more', 'excerpt_more');
-function excerpt_more($more) {
-	return '<a href="'.the_permalink().'">Read More</a>';
-}
-
 # Content Cleanup and Common Shortcode Setup
 add_filter('the_content', 'steps_clean_shortcode_content');
 function steps_clean_shortcode_content( $content ) {

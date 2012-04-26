@@ -52,7 +52,9 @@ get_header();
       <?php $cta = get_meta('_home_spotlight_button'); ?>
       <?php $cta_link = get_meta('_home_spotlight_link'); ?>
       <?php if ($cta): ?>
-        <a class="cta" href="<?php echo $cta_link ?>"><?php echo $cta; ?></a>
+        <div class="signup">
+          <a class="cta" href="<?php echo $cta_link ?>"><?php echo $cta; ?><span class="action-icon"></span></a>
+        </div>
       <?php endif; ?>
     <?php endwhile; endif; ?>
     <?php wp_reset_query(); ?>
