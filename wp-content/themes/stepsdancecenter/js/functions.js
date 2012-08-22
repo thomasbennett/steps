@@ -142,8 +142,8 @@ jQuery(function($) {
             'transitionIn'  : 'none',
             'transitionOut' : 'none',
             'title'     : this.title,
-            'width'   : 680,
-            'height'    : 495,
+            'width'   : 624,
+            'height'    : 445,
             'href'      : this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
             'type'      : 'swf',
             'swf'     : {
@@ -212,7 +212,7 @@ jQuery(function($) {
             var label = $(this).parents('.gfield').find('label:eq(0)').text().replace('*', '');
             $(this).attr('title', label).addClass('blink');
             if (!$(this).val()) {
-              $(this).val(label);
+              // $(this).val(label);
             }
         });
     }

@@ -1,21 +1,11 @@
 <?php get_header(); ?>
-<!-- Main -->
-<div id="main">
-	<div class="shell">
-		<div id="content">
-			<div class="cbox">
-				<div class="cbox-t"></div>
-				<div class="cbox-c">
-					<h1><?php steps_blog_title(); ?><span>&nbsp;</span></h1>
-					<?php get_template_part('loop'); ?>
-				</div>
-				<div class="cbox-b"></div>
-			</div>
-		</div>
-		<?php get_sidebar('blog'); ?>
-		<div class="cl">&nbsp;</div>
-	</div>	
+
+<div class="center" <?php if(!is_front_page()): ?>style="margin-top: 195px;"<?php endif; ?>>
+  <aside>
+    <?php get_sidebar(); ?>
+  </aside>
+
+  <?php get_template_part('loop'); ?>
 </div>
-<!-- End of Main -->
-<?php get_sidebar('bottom'); ?>
+
 <?php get_footer(); ?>

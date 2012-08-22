@@ -20,7 +20,6 @@ function theme_init_theme() {
 }
 add_action('init', 'theme_init_theme');
 
-
 add_action('after_setup_theme', 'theme_setup_theme');
 
 # To override theme setup process in a child theme, add your own theme_setup_theme() to your child theme's
@@ -35,13 +34,12 @@ function theme_setup_theme() {
 	add_theme_support('post-thumbnails');
 
 	# Custom image sizes
-	add_image_size('home_post_thumb', 130, 100, true);
 	add_image_size('event_thumb', 180, 104, true);
-	add_image_size('post_large', 715, 215, true);
-	add_image_size('post_medium', 230, 157, true);
+	add_image_size('post_large', 624, 999, true);
+	add_image_size('post_medium', 208, 999, true);
 	add_image_size('post_normal', 270, 150, true);
-	add_image_size('gallery_large', 748, 374, true);
-	add_image_size('gallery_small', 48, 48, true);
+	add_image_size('gallery_large', 960, 506, true);
+	add_image_size('gallery_small', 104, 104, true);
 
 	# Register CPTs
 	include_once('options/theme-post-types.php');

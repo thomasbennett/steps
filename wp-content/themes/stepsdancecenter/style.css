@@ -155,6 +155,7 @@ button {  width: auto; overflow: visible; }
 .clear { clear: both; }
 .alignleft { float: left; margin: 0 15px 0 0; }
 .alignright { float: right; margin: 0 0 0 15px; }
+.wp-post-image { margin-bottom: 15px; }
 .cta {
   background: url('images/cta-bg.jpg') repeat-x;
   border: 1px solid #999;
@@ -302,6 +303,7 @@ footer {
   background: #ccc;
   border-top: 2px solid #000;
   clear: both;
+  min-height: 160px;
 }
 
 /* navigation */
@@ -362,7 +364,7 @@ nav #menu-primary {
 
 #menu-footer li { margin-left: 4px; }
 #menu-footer { margin-top: 10px; margin-left: -4px; }
-.copyright { margin-top: 10px; margin-bottom: 0; }
+.copyright { font-size: 1em; margin-top: 10px; margin-bottom: 0; }
 #menu-footer li:after { content: ' |'; }
 
 /* Home */
@@ -419,6 +421,7 @@ nav #menu-primary {
 #content { 
   margin-top: 20px;
   max-width: 624px;
+  min-height: 300px;
 }
 
 aside { 
@@ -426,6 +429,27 @@ aside {
   margin-left: 30px;
   max-width: 300px;
 }
+
+.news-excerpt {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 15px; 
+}
+
+p.info {
+  background: #888;
+  color: #fff;
+  font-size: 2em;
+  line-height: 1.2;
+  margin-bottom: 5px;
+  max-width: 70px;
+  padding: 4px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.the-month, .the-day { display: block; }
+.the-day { background: #bbb; }
 
 /* twitter */
 .tweeters { 
@@ -445,34 +469,24 @@ aside {
 .social-icons a.fb { background-image:url(images/fb2.png); width:22px; }
 
 /* Gallery */
-.gallery-nav { height:56px; position:relative; background-color:#0079c1; }
+.gallery-nav { height:56px; background-color:#888; overflow: hidden; border-top: 1px solid #444; border-right: 1px solid #444}
 .gallery-nav ul { position:relative; z-index: 2; }
-.gallery-nav li { float:left; height:56px; width:191px;  }
-.gallery-nav li+li {  background:url(images/gnav-div.png) no-repeat 0 6px;  }
-.gallery-nav li a { display:block; height:56px; position:relative; background-position:center bottom; background-repeat:no-repeat;  }
-.gallery-nav li a span { position:absolute; color:#e3e4e4; font-family: 'asapbold'; font-size:13px; width:100%; text-align:center; left:0; bottom:5px;  }
-.gallery-nav li.nav-photography a { background-image:url(images/icon1.png);  }
-.gallery-nav li.nav-video a { background-image:url(images/icon2.png);  }
-.gallery-nav li.nav-illustration a { background-image:url(images/icon3.png);  }
-.gallery-nav li.nav-graphic-design a { background-image:url(images/icon4.png);  }
-.gallery-nav li.nav-awards a { background-image:url(images/icon5.png);  }
-.gallery-nav li.current a,
-.gallery-nav li a:hover { background-position:center 0;  }
-.gallery-nav li.current a span,
-.gallery-nav li a:hover span { color:#fff; text-decoration:none;  }
-.gallery-nav .hover { position:absolute; z-index: 2; width:191px; height:78px; background:url(images/gnav-hover.png) no-repeat center 0; left:0; top:-11px; z-index: 1;  }
+.gallery-nav li { border-left: 1px solid #444; border-right: 1px solid #444; float:left; height:56px; }
+.gallery-nav li:hover { cursor: pointer; }
+.gallery-nav li a { border-right: 1px solid #fff; display:block; font-family: 'Trebuchet MS'; height:38px; padding: 20px 20px 0; position:relative; text-decoration: none; }
+.gallery-nav li a:hover { background: #bbb; }
+.gallery-nav li a span { color:#fff; font-size:16px; }
 
-.gallery { padding-top:33px;  }
-.gallery .slider-tab { position:absolute; left:-10000px; top:-10000px;  }
+.gallery .slider-tab { position:absolute; left:-10000px; top:-10000px;  margin-bottom: 30px; }
 .gallery .active-tab { position:static }
-.gallery-shortcode { padding: 0 0 13px; width: 748px; position: relative; margin: 0 -15px 0 -11px; }
+.gallery-shortcode { width: 624px; position: relative; }
 .popup-content .gallery-shortcode, 
 .type2 .gallery-shortcode { margin: 0; }
 
 .main-slider,
 .main-slider .jcarousel-clip,
-.main-slider li {position:relative; width:748px; height:374px; overflow:hidden; z-index: 1; }
-.main-slider { padding:16px 0 0 11px; margin-bottom:13px;  }
+.main-slider li {position:relative; width:624px; height:374px; overflow:hidden; z-index: 1; }
+.main-slider {  margin-bottom: 15px; }
 .gallery-shortcode .main-slider { padding: 0; }
 .jcarousel-next,
 .jcarousel-prev { position:absolute; width:30px; height:54px; background:url(images/main-sl-nav.png); top:50%; margin-top:-27px; left:0; z-index: 2; cursor:pointer; }
@@ -481,12 +495,12 @@ aside {
 .jcarousel-prev:hover { background-position:0 bottom;  }
 .main-slider li { float:left; position:relative; }
 .main-slider li img { position:relative; z-index: 1; height:100%; width:100%;    }
-.main-slider li .caption { position:absolute; bottom:0; left:0; right:0; padding:10px; background:url(images/caption.png); z-index: 2; display:none;  }
-.main-slider li .caption h5 { color:#fff;  }
-.main-slider li .caption p { font-size:12px; color:#fff;  font-family: 'asapregular'; line-height:15px;  }
+.main-slider li .caption { position:absolute; bottom:0; left:0; right:0; padding:10px; background:url(images/transparent-bg.png); z-index: 2; display:none;  }
+.main-slider li .caption h5 { color:#fff;  font-family: 'Trebuchet MS'}
+.main-slider li .caption p { font-size:12px; color:#fff;  font-family: 'Trebuchet MS'; line-height:15px;  }
 
 .thumbs-slider,
-.thumbs-slider .jcarousel-clip { position:relative; width:702px; height:48px; overflow:hidden; }
+.thumbs-slider .jcarousel-clip { position:relative; width:624px; height:48px; overflow:hidden; }
 .thumbs-slider .jcarousel-prev, 
 .thumbs-slider .jcarousel-next { width:18px; left:-20px;  }
 .thumbs-slider .jcarousel-next { left:auto; right:-20px;  }
@@ -497,7 +511,7 @@ aside {
 .thumbs-slider li.active .mask { display:block;  }
 
 .gallery-shortcode .thumbs-slider, 
-.gallery-shortcode .thumbs-slider .jcarousel-clip { width: 676px; margin: 0 auto; }
+.gallery-shortcode .thumbs-slider .jcarousel-clip { width: 624px; margin: 0 auto; }
 
 .video-tab .main-slider,
 .video-tab .main-slider .jcarousel-clip,
@@ -516,8 +530,8 @@ aside {
   padding: 15px;
 }
 
-
-
+.gform_body li { margin-left: 0; }
+input { padding-left: 5px !important; }
 
 
 

@@ -20,14 +20,15 @@ endif; ?>
 			<?php endif ?>
       <?php if( get_post_type() == 'page' ): ?>
         <h1><?php the_title(); ?></h1>
+			  <div class="entry"><?php the_content(); ?></div>
       <?php endif; ?>
 
 			<?php if (get_post_type() == 'post'): ?>
+				<p class="right info"><span class="the-month"><?php the_time('M'); ?></span><span class="the-day"><?php the_time('d'); ?></p>
         <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-				<p class="info"><em>By</em>: <strong><?php the_author_posts_link(); ?></strong><span>|</span> <strong><?php the_time('M d, Y h:i a') ?></strong></p>
+			  <div class="news-excerpt entry"><?php the_excerpt(); ?></div>
 			<?php endif ?>
 
-			<div class="entry"><?php the_content(); ?></div>
 		</article>
 	<?php endwhile; ?>
 

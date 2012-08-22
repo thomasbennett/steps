@@ -35,6 +35,7 @@ function steps_autolink_footer_menu_titles($title) {
 function custom_dashboard_widget() {
   include_once('dashboard.php');
 }
+add_action('admin_footer', 'custom_dashboard_widget');
 
 # Theme Cleanup
 function disable_default_dashboard_widgets() {
